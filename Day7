@@ -1,0 +1,11 @@
+module binary_complement_adder(
+    input [3:0] a, b,
+    input mode,  // mode = 0 for addition, mode = 1 for subtraction
+    output [3:0] result,
+    output carry_borrow
+);
+    wire [3:0] b_complement;
+
+    assign b_complement = mode ? ~b + 1 : b; // Compute 2's complement if subtraction
+    ripple_carry_adder rca(a, b_complement, 0, result, carry_borrow);
+endmodule
