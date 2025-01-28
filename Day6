@@ -1,0 +1,14 @@
+module adder_subtractor(
+    input [3:0] a, b,
+    input mode,  // mode = 0 for addition, mode = 1 for subtraction
+    output [3:0] result,
+    output carry_borrow
+);
+    wire [3:0] b_xor_mode;
+    wire cin;
+
+    assign b_xor_mode = b ^ {4{mode}}; // XOR operation for subtraction
+    assign cin = mode;
+
+    ripple_carry_adder rca(a, b_xor_mode, cin, result, carry_borrow);
+endmodule
