@@ -1,0 +1,17 @@
+module multiplier_4x3bit(
+    input [3:0] a,
+    input [2:0] b,
+    output [6:0] product
+);
+    wire [3:0] partial0, partial1, partial2;
+    wire [6:0] temp1, temp2;
+
+    assign partial0 = a & {4{b[0]}};
+    assign partial1 = a & {4{b[1]}};
+    assign partial2 = a & {4{b[2]}};
+
+    assign temp1 = {partial1, 1'b0} + {partial0};
+    assign temp2 = {partial2, 2'b0} + temp1;
+
+    assign product = temp2;
+endmodule
