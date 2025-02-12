@@ -1,5 +1,0 @@
-module andgate (il,i2, out);
-input il,12;
-output out;
-assign out=il&i2;
-endmodule
