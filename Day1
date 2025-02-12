@@ -1,21 +1,3 @@
-
-  #100Days of RTL Challenge
-    
-  Aim :  
-         To design and simulate an AND gate using Verilog, demonstrating its logical operation and verifying its functionality through simulation.
-       
-
-
-  Operations :
-1. Define the logical operation of the AND gate: ( Y = A & B ).  
-2. Write the Verilog code to implement the AND gate.  
-3. Create a testbench to provide input combinations and verify the output.  
-4. Simulate the Verilog design using a simulation tool (e.g., ModelSim, Xilinx Vivado).  
-5. Analyze the simulation results to confirm the correctness of the AND gate's functionality.
-
-
-RTL Code : 
-
 module andgate (il,i2, out);
 input il,12;
 output out;
